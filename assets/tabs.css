@@ -1,0 +1,243 @@
+.main-div {
+    background-color: #30404D;
+}
+
+.Tab_One {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gen-info {
+    background-color: #30404D;
+    padding: 1px 0px 20px 0px;
+}
+
+.geninfo-div {
+    background-color: #30404D;
+    padding: 1px 0px 20px 0px;
+    border-style: solid;
+    border-color: white;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+.graph-grid {
+    display: grid;
+    grid-template-columns: 45vw 45vw;
+    column-gap: 10px;
+    row-gap: 15px;
+    padding-top: 1em;
+    justify-content: center;
+    background-image: url("/assets/img/spacexbanner.jpeg");
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    border-style: solid;
+    border-color: white;
+}
+
+.child:nth-child(-n+3) {
+    border-bottom: var(--border);
+}
+
+.child:nth-child(3n+1) {
+    border-right: var(--border);
+}
+
+.child:nth-child(3n) {
+    border-left: var(--border);
+}
+
+.child:nth-child(n+7) {
+    border-top: var(--border);
+}
+
+.nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    background-color: black;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-content: flex-start;
+    border-style: solid;
+}
+
+.info {
+    padding-right: 55px;
+    position: relative;
+    left: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.video-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-num {
+    border: 5px solid white;
+    background: white;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.video-dropdown {
+    color: black;
+}
+
+.selection_row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 25vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.selection-box {
+    border-style: solid;
+    padding: 5px;
+    background: black;
+}
+
+.middle-space {
+    width: 100px;
+}
+
+.mission_selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 1rem;
+    align-items: flex-end;
+}
+
+.launch_year_dropdown {
+    width: 224px;
+}
+
+.mission_dropdown {
+    width: 224px;
+}
+
+.lower-half {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 120vw;
+    align-items: center;
+}
+
+.video-div {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background: red;*/
+}
+
+.middle-piece {
+    width: 10%;
+}
+
+.video-details {
+    width: 45%;
+}
+
+.mission_video {
+    width: 100%;
+    height: 62vh;
+}
+
+.card-div1 .detail-block {
+    display: inline-block;
+}
+
+.detail-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    width: 49%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    border-style: solid;
+    padding-right: 0.5rem;
+    background-color: black;
+}
+
+.detail-var {
+    font-size: larger;
+    border-block-end-color: black;
+    color: lightskyblue;
+    /* border-block-end-style: solid; */
+    border-block-end: inherit;
+}
+
+.card-divs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    height: 80%;
+}
+
+.mission-h1 {
+    text-align: center;
+    padding: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: xx-large;
+    font-weight: bolder;
+    border-bottom-style: double;
+    border-bottom-width: thin;
+    width: 60%;
+    display: inline-block;
+}
+
+.video-div h2 {
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    font-weight: bolder;
+    border-bottom-style: double;
+    border-bottom-width: thin;
+    width: 60%;
+    display: inline-block;
+}
+
+.dt-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bot-div {
+    height: 10vh;
+}
