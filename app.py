@@ -415,7 +415,7 @@ tab2 = dbc.Tab(label='Site Map', children=[
             html.Div([
                 html.Div([
                     html.Div([
-                        html.H3("Launch Map:  Each Site's Success Ratio", style = {'textAlign': 'center'}),
+                        html.H3("Each Site's Success Ratio"),
                         html.H4(),
                         html.Div(children=
                         [   html.Div([html.P("CCAFS: "), html.Div(ccafs, className = 'info-num')], className = 'info'),
@@ -432,11 +432,12 @@ tab2 = dbc.Tab(label='Site Map', children=[
                 html.Div(className = 'map_div', children = 
                     [
                         html.Div(children=[
-                            html.H4("Florida Launch Sites"),
+                            html.H4("Florida", className='header4'),
                             html.Div(html.Iframe(id='map_fl',srcDoc= open('assets/florida_sites.html','r').read(),width='90%',height='500px', className = 'responsive-iframe')),
                             ], className = 'frame-container'),
+                        html.Hr(),
                         html.Div(children=[
-                            html.H4("California Launch Sites"),
+                            html.H4("California", className='header4'),
                             html.Div(html.Iframe(id='map_ca',srcDoc= open('assets/cali_sites.html','r').read(),width='90%',height='500px)', className = 'responsive-iframe')),
                             ], className = 'frame-container'),
                         ]),
@@ -488,7 +489,6 @@ tab3 = dcc.Tab(label='Mission Info', className = 'custom-tab', selected_classNam
 
 tab4 = dcc.Tab(label='Raw Data', className = 'custom-tab', selected_className = 'custom-tab--selected', children=[
             html.Div(className = 'dt-div', children = [
-                html.H2('Look through the data'),
                 dash_table.DataTable(
                     id='table',
                     columns=[{"name": i, "id": i} for i in data.columns],
@@ -555,18 +555,64 @@ app.layout= html.Div(className = 'main-div',
 def update_graph(site_dropdown):
     labels = {'0':'Failure', '1': 'Successful'}
     if (site_dropdown == 'All Sites'):
-        df = data[data['Class'] == 1]
-        fig = px.pie(df, names='Launch Site', hole=.3, color='Launch Site', color_discrete_sequence=palette)
+        piepalette = ['#8C9B3C','#608A2E','#8A7C2E','#c7c9a9','#9B703C','#9c4a3c']
+        lsdf = data.groupby(['Launch Site']).agg({'Class':['mean','sum','count']})
+        lsdf['Perecent Success']=lsdf[('Class',   'sum')]/lsdf[('Class',   'sum')].sum()*100
+        lsdf['Failed Missions'] = lsdf[('Class',   'count')]-lsdf[('Class',   'sum')]
+        lsdf['Perecent Failure']=lsdf['Failed Missions']/lsdf['Failed Missions'].sum()*100
+        lsdf['Successful Missions'] = lsdf[('Class',   'sum')]
+        lsdf['Total Missions'] = lsdf[('Class',   'count')]
+        lsdf=lsdf.iloc[:,3:].droplevel(level=1, axis=1).reset_index()
+        fig2 = go.Figure(go.Pie(labels=lsdf['Launch Site'], values=lsdf['Successful Missions'], marker_colors=piepalette,
+            hole=.35,customdata=lsdf[['Failed Missions', 'Total Missions']]))#,labels={'Total Missions':'Total Missions'}))
+        fig2.update_traces(hovertemplate='Launch Site: %{label}<br>Failed/Total Missions: %{customdata}<br>Successful Missions: %{value}')
+        fig2.update_traces(textposition='outside',
+                                        textinfo='percent+label',
+                                        marker=dict(line=dict(color='#000000',
+                                                                width=4)),
+                                        pull=[0.05, 0,0,0,0,0])
+                                        # rotation=180 )
+        fig2.update_layout(legend=dict({'traceorder': 'normal'}),
+                                        legend_title_text='Result')
     else:
         df = data.loc[data['Launch Site'] == site_dropdown]
-        fig = px.pie(df, names='Class', hole=.3, color='Class', color_discrete_sequence=palette, labels=labels)
+        def newLegend(fig, newNames):
+            newLabels = []
+            for item in newNames:
+                for i, elem in enumerate(fig.data[0].labels):
+                    if elem == item:
+                        #fig.data[0].labels[i] = newNames[item]
+                        newLabels.append(newNames[item])
+            fig.data[0].labels = np.array(newLabels)
+            return(fig)
+
+        fig2 = px.pie(data,values='Class',
+                                    names='Class',
+                                    color='Class',
+                                    color_discrete_sequence=palette,
+                                    hole=0.35)
+        fig2.update_traces(textposition='outside',
+                                        textinfo='percent+label',
+                                        marker=dict(line=dict(color='#000000',
+                                                                width=4)),
+                                        pull=[0.05, 0])
+                                        # rotation=180 )
+        fig2.update_layout(legend=dict({'traceorder': 'normal'}
+                                                    ),
+                                        legend_title_text='Result')
+        # custom function set to work
+        fig2=newLegend(fig2, {0:"Failed",1:"Success"})
         
-    return fig
+  
+    return fig2
 
 
 @app.callback(Output(component_id='success-payload-scatter-chart',component_property='figure'),[Input(component_id='site_dropdown',component_property='value'),Input(component_id="payload_slider", component_property="value")])
 
 def update_scattergraph(site_dropdown, payload_slider):
+    data['Booster Model'] = data['Booster Family']
+    data['Booster Family'] = data['Booster Family'].astype(str).str[:5]
+    
     if site_dropdown == 'All Sites':
         low, high = payload_slider
         df = data

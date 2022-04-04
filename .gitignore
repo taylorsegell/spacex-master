@@ -2,3 +2,5 @@ dash
 *.pyc
 .DS_Store
 .env
+app.ipynb
+dashprac.ipynb

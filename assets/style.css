@@ -1,547 +1,579 @@
-body {
-    color: aliceblue;
-    font-size: 30;
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /*background-color: rgb(34, 37, 49);*/
-}
-
-div {
-    text-align: center;
-    color: aliceblue;
-    font-size: 40;
-    /*
+                        /* Main CSS*/
+                        
+                        html,
+                        body {
+                            height: 100%;
+                        }
+                        
+                        .container-fluid {
+                            min-height: 100%!important;
+                            height: 100%;
+                        }
+                        
+                        body {
+                            color: aliceblue;
+                            font-size: 30;
+                            margin: 0;
+                            height: 100%;
+                            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                            /*background-color: rgb(34, 37, 49);*/
+                        }
+                        
+                        div {
+                            text-align: center;
+                            color: aliceblue;
+                            font-size: 40;
+                            /*
     background-color: #30404D*/
-}
-
-.title_image {
-    height: 5rem;
-    display: flex;
-    flex-direction: row;
-    margin-top: 7px;
-    padding-bottom: 0.5em;
-}
-
-.header .row {
-    border-style: solid;
-    border-color: white;
-}
-
-.banner {
-    width: 60%;
-    padding: 0.5rem 1rem 1rem 3rem;
-}
-
-.title {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: aliceblue;
-    font-size: xxx-large;
-    font-weight: bolder;
-    background-color: #30404D;
-    display: flex;
-    flex-direction: column-reverse;
-    white-space: pre;
-    align-items: center;
-}
-
-.logo_title {
-    text-align: center;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 1.5em;
-    justify-content: center;
-    justify-content: center;
-    margin-left: 30px;
-}
-
-.drop_down_list_title {
-    display: flex;
-    flex-direction: row;
-    margin-top: 29px;
-}
-
-.drop_down_list {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
-
-.range_slider {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    color: aliceblue;
-}
-
-.payload_title {
-    text-align: center;
-    color: aliceblue;
-    font-size: 40;
-    background-color: #30404D
-}
-
-#footer {
-    display: inline-flex;
-    flex-direction: row;
-    position: relative;
-    margin: 0 auto;
-    text-align: center;
-    font: D-DIN-Bold, Arial, Verdana, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #979797;
-    padding: 20px 0
-}
-
-#footer span {
-    margin: 0 2px
-}
-
-#footer p {
-    margin: 0 2px
-}
-
-#footer a {
-    display: inline-flex;
-    padding: 0.5rem 1rem;
-    color: aliceblue;
-}
-
-#footer a:hover {
-    color: #0d6efd;
-    text-decoration: none;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
-}
-
-#footer a.social {
-    display: inline-block;
-    margin: 0 20px
-}
-
-.site_dropdown .Select-menu-outer {
-    background-color: #30404D;
-}
-
-
-/* Drop down list - background color; text color and border color */
-
-.Select-control,
-.Select-menu-outer,
-.Select-multi-value-wrapper,
-.select-up,
-.is-open .Select-control {
-    background-color: #30404D;
-    color: aliceblue;
-}
-
-.has-value.Select--single>.Select-control .Select-value .Select-value-label,
-.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
-    color: aliceblue;
-    padding-bottom: 1.5rem;
-}
-
-.title_drop_down_list {
-    display: flex;
-    flex-direction: row;
-    gap: 3px;
-}
-
-.card_size {
-    background-color: #30404D;
-    width: 250px;
-    height: 160px;
-}
-
-.flex_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.chart {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    margin-top: 25px;
-    margin-left: 10px;
-}
-
-.text_graph_column {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.card_title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 5px;
-}
-
-
-/* Style the header */
-
-.nav-link {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: aliceblue;
-}
-
-Select-placeholder,
-.Select--single>.Select-control .Select-value {
-    bottom: 0;
-    color: #aaa;
-    left: 0;
-    background-color: aliceblue;
-    line-height: 34px;
-    padding-left: 10px;
-    padding-right: 10px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-
-/* Page content */
-
-.content {
-    padding: 16px;
-}
-
-
-/* The sticky class is added to the header with JS when it reaches its scroll position */
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%
-}
-
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-
-.sticky+.content {
-    padding-top: 102px;
-}
-
-.chart_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 10px;
-}
-
-.donut_chart_column {
-    display: flex;
-    flex-direction: column;
-}
-
-.funnel_chart_size {
-    background-color: #30404D;
-    width: 350px;
-    height: 300px;
-    margin-top: 10px;
-}
-
-.create_row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.background_size1 {
-    background-color: #30404D;
-    width: 456px;
-    height: 147.5px;
-}
-
-.chart_text1 {
-    display: flex;
-    flex-direction: row;
-}
-
-.background_size2 {
-    background-color: #30404D;
-    width: 456px;
-    height: 147.5px;
-    margin-top: 5px;
-    position: absolute;
-}
-
-.chart_text2 {
-    display: flex;
-    flex-direction: row;
-}
-
-.rc-slider-mark-text {
-    position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    cursor: pointer;
-    color: aliceblue;
-}
-
-div .dropdown_site {
-    box-align: center;
-    text-align: center;
-    background-color: aliceblue;
-    font-size: 30;
-    width: 100%;
-    display: flex;
-}
-
-.main-div {
-    background-color: #30404D;
-}
-
-.Tab_One {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.gen-info {
-    background-color: #30404D;
-    padding: 1px 0px 20px 0px;
-}
-
-.geninfo-div {
-    background-color: #30404D;
-    padding: 1px 0px 20px 0px;
-    border-style: solid;
-    border-color: white;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-.graph-grid {
-    display: grid;
-    grid-template-columns: 45vw 45vw;
-    column-gap: 10px;
-    row-gap: 15px;
-    padding-top: 1em;
-    justify-content: center;
-    background-image: url("/assets/img/spacexbanner.jpeg");
-    background-size: cover;
-    background-position: center top;
-    position: relative;
-    border-style: solid;
-    border-color: white;
-}
-
-.child:nth-child(-n+3) {
-    border-bottom: var(--border);
-}
-
-.child:nth-child(3n+1) {
-    border-right: var(--border);
-}
-
-.child:nth-child(3n) {
-    border-left: var(--border);
-}
-
-.child:nth-child(n+7) {
-    border-top: var(--border);
-}
-
-.nav {
-    display: inline-flex;
-    flex-wrap: wrap;
-    background-color: black;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row;
-    align-content: flex-start;
-    border-style: solid;
-}
-
-.info {
-    padding-right: 55px;
-    position: relative;
-    left: 55px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.info-div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.video-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.info-num {
-    border: 5px solid white;
-    background: white;
-    width: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
-}
-
-.video-dropdown {
-    color: black;
-}
-
-.selection_row {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 25vh;
-    text-align: center;
-    flex-direction: column;
-}
-
-.selection-box {
-    border-style: solid;
-    padding: 5px;
-    background: black;
-}
-
-.middle-space {
-    width: 100px;
-}
-
-.mission_selection {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 1rem;
-    align-items: flex-end;
-}
-
-.launch_year_dropdown {
-    width: 224px;
-}
-
-.mission_dropdown {
-    width: 224px;
-}
-
-.lower-half {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 120vw;
-    align-items: center;
-}
-
-.video-div {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /*background: red;*/
-}
-
-.middle-piece {
-    width: 10%;
-}
-
-.video-details {
-    width: 45%;
-}
-
-.mission_video {
-    width: 100%;
-    height: 62vh;
-}
-
-.card-div1 .detail-block {
-    display: inline-block;
-}
-
-.detail-block {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 25px;
-    width: 49%;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-    border-style: solid;
-    padding-right: 0.5rem;
-    background-color: black;
-}
-
-.detail-var {
-    font-size: larger;
-    border-block-end-color: black;
-    color: lightskyblue;
-    /* border-block-end-style: solid; */
-    border-block-end: inherit;
-}
-
-.card-divs {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    justify-content: center;
-    height: 80%;
-}
-
-.mission-h1 {
-    text-align: center;
-    padding: 1rem;
-    padding-top: 1rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    font-size: xx-large;
-    font-weight: bolder;
-    border-bottom-style: double;
-    border-bottom-width: thin;
-    width: 60%;
-    display: inline-block;
-}
-
-.video-div h2 {
-    text-align: center;
-    font-size: -webkit-xxx-large;
-    font-weight: bolder;
-    border-bottom-style: double;
-    border-bottom-width: thin;
-    width: 60%;
-    display: inline-block;
-}
-
-.dt-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.bot-div {
-    height: 10vh;
-}
+                        }
+                        
+                        .main-div {
+                            background-color: #30404D;
+                            height: 100%;
+                        }
+                        
+                        #react-aria3703270426-2-tabpane-tab-1>div>div>div.map_div>div:nth-child(1) {
+                            background-color: #30404D;
+                            border-style: solid;
+                            padding: 1em 2em 2em;
+                        }
+                        
+                        #react-aria3703270426-2-tabpane-tab-1>div>div>div.map_div>div:nth-child(2) {
+                            background-color: #30404D;
+                            border-style: solid;
+                            padding: 1em 2em 2em;
+                        }
+                        
+                        .title {
+                            text-align: center;
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                            color: aliceblue;
+                            font-size: xxx-large;
+                            font-weight: bolder;
+                            background-color: #30404D;
+                            display: flex;
+                            flex-direction: column-reverse;
+                            white-space: pre;
+                            align-items: center;
+                        }
+                        
+                        .title_image {
+                            height: 5rem;
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 7px;
+                            padding-bottom: 0.5em;
+                        }
+                        
+                        .header .row {
+                            border-style: solid;
+                            border-color: white;
+                        }
+                        
+                        .banner {
+                            width: 60%;
+                            padding: 0.5rem 1rem 1rem 3rem;
+                        }
+                        
+                        .logo_title {
+                            text-align: center;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            gap: 1.5em;
+                            justify-content: center;
+                            justify-content: center;
+                            margin-left: 30px;
+                        }
+                        
+                        .drop_down_list_title {
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 29px;
+                        }
+                        
+                        .drop_down_list {
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 10px;
+                        }
+                        
+                        .range_slider {
+                            display: flex;
+                            flex-direction: row;
+                            margin-top: 10px;
+                            color: aliceblue;
+                        }
+                        
+                        .payload_title {
+                            text-align: center;
+                            color: aliceblue;
+                            font-size: 40;
+                            background-color: #30404D
+                        }
+                        
+                        h4 {
+                            font-size: xxx-large;
+                            font-family: 'Georama';
+                            font-style: italic;
+                        }
+                        
+                        #footer {
+                            display: inline-flex;
+                            flex-direction: row;
+                            position: relative;
+                            margin: 0 auto;
+                            text-align: center;
+                            font: D-DIN-Bold, Arial, Verdana, sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+                            color: #979797;
+                            padding: 20px 0
+                        }
+                        
+                        #footer span {
+                            margin: 0 2px
+                        }
+                        
+                        #footer p {
+                            margin: 0 2px
+                        }
+                        
+                        #footer a {
+                            display: inline-flex;
+                            padding: 0.5rem 1rem;
+                            color: aliceblue;
+                        }
+                        
+                        #footer a:hover {
+                            color: #0d6efd;
+                            text-decoration: none;
+                            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+                        }
+                        
+                        #footer a.social {
+                            display: inline-block;
+                            margin: 0 20px
+                        }
+                        
+                        .site_dropdown .Select-menu-outer {
+                            background-color: #30404D;
+                        }
+                        /* Drop down list - background color; text color and border color */
+                        
+                        .Select-control,
+                        .Select-menu-outer,
+                        .Select-multi-value-wrapper,
+                        .select-up,
+                        .is-open .Select-control {
+                            background-color: #30404D;
+                            color: aliceblue;
+                        }
+                        
+                        .has-value.Select--single>.Select-control .Select-value .Select-value-label,
+                        .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
+                            color: aliceblue!important;
+                            padding-bottom: 1.5rem;
+                        }
+                        
+                        .title_drop_down_list {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 3px;
+                        }
+                        
+                        .card_size {
+                            background-color: #30404D;
+                            width: 250px;
+                            height: 160px;
+                        }
+                        
+                        .flex_container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            margin-top: 20px;
+                            gap: 10px;
+                        }
+                        
+                        .chart {
+                            display: flex;
+                            flex-direction: row;
+                            position: absolute;
+                            margin-top: 25px;
+                            margin-left: 10px;
+                        }
+                        
+                        .text_graph_column {
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                        }
+                        
+                        .card_title {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            margin-top: 5px;
+                        }
+                        /* Style the header */
+                        
+                        .nav-link {
+                            display: block;
+                            padding: 0.5rem 1rem;
+                            color: aliceblue;
+                        }
+                        
+                        #cl_dropdown {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                            padding-top: 3rem;
+                        }
+                        /* Page content */
+                        
+                        .content {
+                            padding: 16px;
+                        }
+                        /* The sticky class is added to the header with JS when it reaches its scroll position */
+                        
+                        .sticky {
+                            position: fixed;
+                            top: 0;
+                            width: 100%
+                        }
+                        /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+                        
+                        .sticky+.content {
+                            padding-top: 102px;
+                        }
+                        
+                        .chart_container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            margin-top: 10px;
+                            gap: 10px;
+                        }
+                        
+                        .donut_chart_column {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        
+                        .funnel_chart_size {
+                            background-color: #30404D;
+                            width: 350px;
+                            height: 300px;
+                            margin-top: 10px;
+                        }
+                        
+                        .map_div {
+                            border-style: solid;
+                            padding: 2em;
+                            background-color: black;
+                        }
+                        
+                        .create_row {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            gap: 10px;
+                        }
+                        
+                        .background_size1 {
+                            background-color: #30404D;
+                            width: 456px;
+                            height: 147.5px;
+                        }
+                        
+                        .chart_text1 {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                        
+                        .background_size2 {
+                            background-color: #30404D;
+                            width: 456px;
+                            height: 147.5px;
+                            margin-top: 5px;
+                            position: absolute;
+                        }
+                        
+                        .chart_text2 {
+                            display: flex;
+                            flex-direction: row;
+                        }
+                        
+                        .rc-slider-mark-text {
+                            position: absolute;
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-align: center;
+                            cursor: pointer;
+                            color: aliceblue;
+                        }
+                        
+                        .Tab_One {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .gen-info {
+                            background-color: #30404D;
+                            padding: 2rem 0rem 2rem 0rem;
+                        }
+                        
+                        .geninfo-div {
+                            background-color: #30404D;
+                            padding: 1px 0px 20px 0px;
+                            border-style: solid;
+                            border-color: white;
+                        }
+                        
+                        h2 {
+                            font-size: 1.5em;
+                        }
+                        
+                        h3 {
+                            text-align: center;
+                            font-size: xx-large;
+                            font-style: italic;
+                            padding: 1rem 2rem 1rem;
+                            background-color: black;
+                            display: inline-flex;
+                            border-style: double;
+                        }
+                        
+                        .graph-grid {
+                            display: grid;
+                            grid-template-columns: 45vw 45vw;
+                            column-gap: 10px;
+                            row-gap: 15px;
+                            padding-top: 1em;
+                            justify-content: center;
+                            background-image: url("/assets/img/spacexbanner.jpeg");
+                            background-size: cover;
+                            background-position: center top;
+                            position: relative;
+                            border-style: solid;
+                            border-color: white;
+                        }
+                        
+                        .child:nth-child(-n+3) {
+                            border-bottom: var(--border);
+                        }
+                        
+                        .child:nth-child(3n+1) {
+                            border-right: var(--border);
+                        }
+                        
+                        .child:nth-child(3n) {
+                            border-left: var(--border);
+                        }
+                        
+                        .child:nth-child(n+7) {
+                            border-top: var(--border);
+                        }
+                        
+                        .nav {
+                            display: inline-flex;
+                            flex-wrap: wrap;
+                            background-color: black;
+                            padding-left: 0;
+                            margin-bottom: 0;
+                            list-style: none;
+                            width: 100%;
+                            justify-content: center;
+                            flex-direction: row;
+                            align-content: flex-start;
+                            border-style: solid;
+                        }
+                        
+                        .info {
+                            padding-right: 55px;
+                            position: relative;
+                            left: 55px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .info-div {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: flex-end;
+                        }
+                        
+                        .video-page {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .info-num {
+                            border: 5px solid white;
+                            background: white;
+                            width: 60px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            color: black;
+                        }
+                        
+                        .Select-menu-outer .Select .VirtualizedSelectOption:nth-child(n) {
+                            background-color: #30404D;
+                        }
+                        
+                        .video-dropdown {
+                            color: black;
+                        }
+                        
+                        .selection_row {
+                            display: flex;
+                            justify-content: center;
+                            width: 100%;
+                            height: 25vh;
+                            text-align: center;
+                            flex-direction: column;
+                        }
+                        
+                        .selection-box {
+                            border-style: solid;
+                            padding: 5px;
+                            background: black;
+                        }
+                        
+                        .middle-space {
+                            width: 100px;
+                        }
+                        
+                        .mission_selection {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            padding-bottom: 1rem;
+                            align-items: flex-end;
+                        }
+                        
+                        .launch_year_dropdown {
+                            width: 224px;
+                        }
+                        
+                        .mission_dropdown {
+                            width: 224px;
+                        }
+                        
+                        .lower-half {
+                            display: flex;
+                            justify-content: center;
+                            flex-direction: column;
+                            width: 120vw;
+                            align-items: center;
+                        }
+                        
+                        .video-div {
+                            width: 70%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            /*background: red;*/
+                        }
+                        
+                        .middle-piece {
+                            width: 10%;
+                        }
+                        
+                        .video-details {
+                            width: 45%;
+                        }
+                        
+                        .mission_video {
+                            width: 100%;
+                            height: 62vh;
+                        }
+                        
+                        .card-div1 .detail-block {
+                            display: inline-block;
+                        }
+                        
+                        .detail-block {
+                            display: flex;
+                            flex-direction: column;
+                            margin-bottom: 25px;
+                            width: 49%;
+                            justify-content: space-around;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            border-style: solid;
+                            padding-right: 0.5rem;
+                            background-color: black;
+                        }
+                        
+                        .detail-var {
+                            font-size: larger;
+                            border-block-end-color: black;
+                            color: lightskyblue;
+                            /* border-block-end-style: solid; */
+                            border-block-end: inherit;
+                        }
+                        
+                        .card-divs {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            align-items: flex-end;
+                            justify-content: center;
+                            height: 80%;
+                        }
+                        
+                        .mission-h1 {
+                            text-align: center;
+                            padding: 1rem;
+                            padding-top: 1rem;
+                            padding-right: 1rem;
+                            padding-left: 1rem;
+                            font-size: xx-large;
+                            font-weight: bolder;
+                            border-bottom-style: double;
+                            border-bottom-width: thin;
+                            width: 60%;
+                            display: inline-block;
+                        }
+                        
+                        .video-div h2 {
+                            text-align: center;
+                            font-size: -webkit-xxx-large;
+                            font-weight: bolder;
+                            border-bottom-style: double;
+                            border-bottom-width: thin;
+                            width: 60%;
+                            display: inline-block;
+                        }
+                        
+                        .dt-div {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        .bot-div {
+                            height: 10vh;
+                        }
+                        
+                        .ReactVirtualized__Grid__innerScrollContainer {
+                            background-color: #30404D;
+                        }
+                        
+                        #react-select-2--value>div.Select-input {
+                            border: 0px;
+                            width: 0px!important;
+                            display: inline-block;
+                        }
